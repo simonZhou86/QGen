@@ -1,0 +1,47 @@
+endpoint:
+  base_url: "https://api.openai.com/v1"
+  api_key: ""
+  model: "gpt-3.5-turbo"
+  temperature: 0.2
+  max_tokens: 900
+
+context:
+  context_dir: "data/context"
+  max_chars_per_chunk: 1800
+  sample_docs_per_round: 1
+  sample_chunks_per_doc: 2
+
+generation:
+  temperature: 0.7
+  difficulty_prior:
+    "1": 1.0
+    "3": 1.2
+    "5": 1.0
+  reasoning_types:
+    - "retrieval"
+    - "causal reasoning"
+    - "counterfactual"
+    - "numerical reasoning"
+  difficulty_levels:
+    - "1"
+    - "3"
+    - "5"
+  task_types:
+    - "extractive_qa"
+    - "abstractive_qa"
+    - "claim_quality_check"
+
+run:
+  rounds: 4
+  questions_per_round: 3
+  bucket_gamma: 1.2
+  ema_alpha: 0.2
+  epsilon: 0.15
+  seed: 42
+  max_generation_attempts: 1
+  novelty_lexical_threshold: 0.8
+  novelty_llm_window: 10
+
+storage:
+  question_history_path: "data/questions.jsonl"
+  run_summary_path: "data/runs.jsonl"
