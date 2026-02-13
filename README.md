@@ -95,3 +95,8 @@ Summary includes:
 ```bash
 python -m unittest discover -s tests
 ```
+
+## Some future works
+- Agentic Question Generation with Tool Use (search agent to search new docs, curator agent to generate questions, critic agent to judge the novelty and answers)
+- Richer Task Type Expansion (i.e., adding multi-step clinical reasoning tasks)
+-  Human-in-the-Loop Validation for the questions flagged as ambiguous, or have weak ground truth.
